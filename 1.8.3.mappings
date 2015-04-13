@@ -16952,10 +16952,12 @@ CLASS none/awg
 		FIELD a mc Lnone/avf;
 	METHOD b getListItemCount ()I
 	METHOD b getSlot (I)Lnone/awe$a;
+	METHOD c getListWidth ()I
 	METHOD d getScrollbarHorizontalPosition ()I
 CLASS none/awh
 	METHOD b getListItemCount ()I
 	METHOD b getSlot (I)Lnone/awe$a;
+	METHOD c getListWidth ()I
 	METHOD d getScrollbarHorizontalPosition ()I
 CLASS none/awi net/minecraft/client/gui/GuiScoreboard
 	FIELD f mc Lnone/avf;
@@ -16965,19 +16967,84 @@ CLASS none/awj net/minecraft/client/gui/GuiScrolledSelectionList
 	FIELD a minecraft Lnone/avf;
 	FIELD b guiWidth I
 	FIELD c guiHeight I
+	FIELD d top I
+	FIELD e bottom I
+	FIELD f right I
+	FIELD g left I
 	FIELD h listItemHeight I
+	FIELD i mouseX I
+	FIELD j mouseY I
+	FIELD l initialClickY I
+	FIELD m scrollMultiplier F
+	FIELD n amountScrolled F
+	FIELD o selectedElement I
+	FIELD p lastClicked J
+	FIELD r showSelectionBox Z
+	FIELD s hasListHeader Z
+	FIELD t headerPadding I
+	FIELD u scrollUpButtonID I
+	FIELD v scrollDownButtonID I
+	FIELD w enabled Z
 	METHOD <init> (Lnone/avf;IIIII)V
+		ARG 0 mc
 		ARG 1 guiWidth
 		ARG 2 guiHeight
+		ARG 3 top
+		ARG 4 bottom
 		ARG 5 listItemHeight
 	METHOD a drawBackground ()V
 	METHOD a isListItemSelected (I)Z
+		ARG 0 index
+	METHOD a drawScreen (IIF)V
+		ARG 0 mouseX
+		ARG 1 mouseY
+	METHOD a setDimensions (IIII)V
+		ARG 0 width
+		ARG 1 height
+		ARG 2 top
+		ARG 3 bottom
 	METHOD a drawListItem (IIIIII)V
+	METHOD a drawListHeader (IILnone/bfy;)V
+		ARG 2 tessellator
 	METHOD a selectItem (IZII)V
+		ARG 0 index
+		ARG 1 isDoubleClick
+		ARG 2 mouseX
+		ARG 3 mouseY
 	METHOD a actionPerformed (Lnone/avt;)V
+		ARG 0 button
+	METHOD a setListHeaderAndPadding (ZI)V
+		ARG 0 hasListHeader
+		ARG 1 headerPadding
 	METHOD b getListItemCount ()I
+	METHOD b (II)V
+		ARG 0 mouseX
+		ARG 1 mouseY
+	METHOD b drawSelectionBox (IIII)V
+	METHOD b setSelectionBoxShown (Z)V
+		ARG 0 shown
+	METHOD c getListWidth ()I
+	METHOD c getListItemFromPosition (II)I
+		ARG 0 x
+		ARG 1 y
+	METHOD c overlayBackground (IIII)V
 	METHOD d getScrollbarHorizontalPosition ()I
+	METHOD d registerScrollButtons (II)V
+		ARG 0 upButton
+		ARG 1 downButton
+	METHOD d setEnabled (Z)V
+		ARG 0 enabled
+	METHOD g isMouseYWithinItemBounds (I)Z
+		ARG 0 mouseY
+	METHOD h scroll (I)V
+		ARG 0 amount
+	METHOD i setSlotXBoundsFromLeft (I)V
+		ARG 0 left
 	METHOD k getScrolledHeight ()I
+	METHOD l bindAmountScrolled ()V
+	METHOD n getAmountScrolled ()I
+	METHOD q isEnabled ()Z
+	METHOD r getListItemHeight ()I
 CLASS none/awk net/minecraft/client/gui/button/bvl
 	METHOD a mouseReleased (II)V
 	METHOD a getHoverState (Z)I
@@ -17002,6 +17069,7 @@ CLASS none/awr
 	METHOD a drawSelectedListItem (IIILnet/minecraft/realms/Tezzelator;)V
 	METHOD a selectItem (IZII)V
 	METHOD b getListItemCount ()I
+	METHOD b drawSelectionBox (IIII)V
 	METHOD d getScrollbarHorizontalPosition ()I
 	METHOD e getGuiWidth ()I
 	METHOD k getScrolledHeight ()I
@@ -17036,6 +17104,7 @@ CLASS none/awu
 	FIELD u selectionList Lnet/minecraft/realms/RealmsSimpleScrolledSelectionList;
 	METHOD a drawBackground ()V
 	METHOD a isListItemSelected (I)Z
+	METHOD a drawScreen (IIF)V
 	METHOD a drawListItem (IIIIII)V
 	METHOD a selectItem (IZII)V
 	METHOD b getListItemCount ()I
@@ -17345,6 +17414,12 @@ CLASS none/ayf net/minecraft/client/gui/GuiAchievements
 	METHOD d doesGuiPauseGame ()Z
 	METHOD e updateScreen ()V
 CLASS none/ayg net/minecraft/client/gui/GuiStats
+	CLASS none/ayg$a
+		METHOD a drawListHeader (IILnone/bfy;)V
+	CLASS none/ayg$c
+		METHOD a drawListHeader (IILnone/bfy;)V
+	CLASS none/ayg$e
+		METHOD a drawListHeader (IILnone/bfy;)V
 	FIELD a parent Lnone/axv;
 	METHOD <init> (Lnone/axv;Lnone/nc;)V
 		ARG 0 parent
@@ -17361,6 +17436,7 @@ CLASS none/ayj
 	FIELD v mc Lnone/avf;
 	METHOD b getListItemCount ()I
 	METHOD b getSlot (I)Lnone/awe$a;
+	METHOD c getListWidth ()I
 	METHOD d getScrollbarHorizontalPosition ()I
 CLASS none/ayk net/minecraft/client/gui/GuiControls
 	METHOD a keyTyped (CI)V
@@ -17577,6 +17653,7 @@ CLASS none/azm
 	METHOD b getListItemCount ()I
 	METHOD b getSlot (I)Lnone/awe$a;
 		ARG 0 index
+	METHOD c getListWidth ()I
 	METHOD d getScrollbarHorizontalPosition ()I
 CLASS none/azp net/minecraft/client/gui/GuiSelectResourcePack
 	METHOD a drawScreen (IIF)V
@@ -17591,8 +17668,10 @@ CLASS none/azq
 CLASS none/azu net/minecraft/client/gui/GuiResourcePackAvailableList
 	METHOD e getTitle ()Ljava/lang/String;
 CLASS none/azv net/minecraft/client/gui/GuiResourcePackList
+	METHOD a drawListHeader (IILnone/bfy;)V
 	METHOD b getListItemCount ()I
 	METHOD b getSlot (I)Lnone/awe$a;
+	METHOD c getListWidth ()I
 	METHOD d getScrollbarHorizontalPosition ()I
 	METHOD e getTitle ()Ljava/lang/String;
 CLASS none/azw net/minecraft/client/gui/GuiResourcePackSelectedList
@@ -18570,8 +18649,10 @@ CLASS none/bfe net/minecraft/client/renderers/BufferBuilder
 	METHOD a putBrightness (IIII)V
 	METHOD a putColorRGBA (IIIII)V
 		ARG 0 alpha
+	METHOD a startDrawingQuads (ILnone/bmv;)V
 	METHOD a addVertexData ([I)V
 	METHOD b begin ()V
+	METHOD b (DDD)Lnone/bfe;
 	METHOD b setColorRGB_F (FFF)V
 		ARG 0 red
 		ARG 1 green
@@ -19027,6 +19108,7 @@ CLASS none/bfy net/minecraft/client/renderers/Tessellator
 	FIELD b vboUploader Lnone/bff;
 	FIELD c INSTANCE Lnone/bfy;
 	METHOD a getInstance ()Lnone/bfy;
+	METHOD b draw ()V
 	METHOD c getBufferBuilder ()Lnone/bfe;
 CLASS none/bfz
 	METHOD a loadBufferPointers ()V
