@@ -15518,13 +15518,32 @@ CLASS none/ass net/minecraft/world/gen/layer/GenLayerZoom
 		ARG 0 seed
 		ARG 1 source
 		ARG 2 zoomLevel
-CLASS none/asw
+CLASS none/asw net/minecraft/pathfinding/PathPoint
 	FIELD a x I
 	FIELD b y I
 	FIELD c z I
+	FIELD d index I
+	FIELD e totalPathDistance F
+	FIELD f distanceToNext F
+	FIELD g distanceToTarget F
+	FIELD h previous Lnone/asw;
+	FIELD i visited Z
 	FIELD j hash I
+	METHOD <init> (III)V
+		ARG 0 x
+		ARG 1 y
+		ARG 2 z
+	METHOD a isAssigned ()Z
+	METHOD a makeHash (III)I
+		ARG 0 x
+		ARG 1 y
+		ARG 2 z
 	METHOD a distance (Lnone/asw;)F
+		ARG 0 otherPoint
 	METHOD b distanceSquared (Lnone/asw;)F
+		ARG 0 otherPoint
+	METHOD equals (Ljava/lang/Object;)Z
+		ARG 0 other
 CLASS none/atf net/minecraft/world/WorldData
 	FIELD a name Ljava/lang/String;
 	FIELD b requiresSave Z
