@@ -17581,7 +17581,7 @@ CLASS none/ayj net/minecraft/client/gui/GuiKeyBindingList
 			ARG 2 y
 			ARG 3 button
 			ARG 4 relativeX
-			ARG 5 rrelativeY
+			ARG 5 relativeY
 		METHOD a drawEntry (IIIIIIIZ)V
 			ARG 0 index
 			ARG 1 x
@@ -19188,7 +19188,7 @@ CLASS none/bfo net/minecraft/client/renderers/PlayerRenderer
 	FIELD d heldItemStack Lnone/zy;
 	FIELD g entityRenderer Lnone/biv;
 	FIELD h itemRenderer Lnone/bji;
-CLASS none/bfs net/minecraft/client/renderers/WorldRenderer
+CLASS none/bfs net/minecraft/client/renderers/RenderGlobal
 	CLASS none/bfs$a ChunkSectionRendererWithFacings
 		FIELD a chunkSectionRenderer Lnone/bhu;
 		FIELD b facing Lnone/cr;
