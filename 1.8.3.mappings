@@ -16434,6 +16434,7 @@ CLASS none/avc net/minecraft/client/KeyBinding
 	FIELD f category Ljava/lang/String;
 	FIELD g keyCode I
 	METHOD a unpressAll ()V
+	METHOD b resetKeyBindingArrayAndHash ()V
 	METHOD b setKey (I)V
 		ARG 0 keyCode
 	METHOD c getCategories ()Ljava/util/Set;
@@ -16779,6 +16780,7 @@ CLASS none/avi net/minecraft/client/settings/GameSettings
 	FIELD x advancedItemTooltips Z
 	FIELD y pauseOnLostFocus Z
 	FIELD z touchScreen Z
+	METHOD a setOptionKeyBinding (Lnone/avc;I)V
 	METHOD a setOptionValue (Lnone/avi$a;F)V
 		ARG 0 option
 		ARG 1 value
@@ -16787,6 +16789,7 @@ CLASS none/avi net/minecraft/client/settings/GameSettings
 		ARG 0 names
 		ARG 1 settingValue
 	METHOD b saveOptions ()V
+	METHOD c getKeyDisplayString (I)Ljava/lang/String;
 	METHOD c getKeyBinding (Lnone/avi$a;)Ljava/lang/String;
 CLASS none/avj net/minecraft/client/LoadingScreenRenderer
 	FIELD a progressBarMessage Ljava/lang/String;
@@ -16832,6 +16835,7 @@ CLASS none/avn net/minecraft/client/main/MinecraftSession
 	METHOD c getUsername ()Ljava/lang/String;
 	METHOD f getAccountType ()Lnone/avn$a;
 CLASS none/avo net/minecraft/client/renderers/FontRenderer
+	FIELD a FONT_HEIGHT I
 	FIELD c UNICODE_PAGE_PNG_CACHE [Lnone/jz;
 	METHOD a getUnicodePage (I)Lnone/jz;
 	METHOD a getStringWidth (Ljava/lang/String;)I
@@ -17527,23 +17531,87 @@ CLASS none/ayg net/minecraft/client/gui/GuiStats
 CLASS none/ayh net/minecraft/client/gui/ILoadableGui
 	FIELD c_ LOADING_BAR [Ljava/lang/String;
 	METHOD a onLoaded ()V
-CLASS none/ayj
-	CLASS none/ayj$a
+CLASS none/ayj net/minecraft/client/gui/GuiKeyBindingList
+	CLASS none/ayj$a CategoryEntry
+		FIELD b labelText Ljava/lang/String;
+		FIELD c labelWidth I
+		METHOD <init> (Lnone/ayj;Ljava/lang/String;)V
+			ARG 1 text
 		METHOD a setSelected (III)V
+			ARG 0 index
+			ARG 1 x
+			ARG 2 y
 		METHOD a mouseClicked (IIIIII)Z
+			ARG 0 index
+			ARG 1 x
+			ARG 2 y
+			ARG 3 button
+			ARG 4 relativeX
+			ARG 5 relativeY
 		METHOD a drawEntry (IIIIIIIZ)V
+			ARG 0 index
+			ARG 1 x
+			ARG 2 y
+			ARG 3 width
+			ARG 4 height
+			ARG 5 mouseX
+			ARG 6 mouseY
+			ARG 7 selected
 		METHOD b mouseReleased (IIIIII)V
-	CLASS none/ayj$b
+			ARG 0 index
+			ARG 1 x
+			ARG 2 y
+			ARG 3 button
+			ARG 4 relativeX
+			ARG 5 relativeY
+	CLASS none/ayj$b KeyEntry
+		FIELD b keyBinding Lnone/avc;
+		FIELD c keyDescription Ljava/lang/String;
+		FIELD d changeButton Lnone/avt;
+		FIELD e resetButton Lnone/avt;
+		METHOD <init> (Lnone/ayj;Lnone/avc;)V
+			ARG 1 keyBinding
 		METHOD a setSelected (III)V
+			ARG 0 index
+			ARG 1 x
+			ARG 2 y
 		METHOD a mouseClicked (IIIIII)Z
+			ARG 0 index
+			ARG 1 x
+			ARG 2 y
+			ARG 3 button
+			ARG 4 relativeX
+			ARG 5 rrelativeY
 		METHOD a drawEntry (IIIIIIIZ)V
+			ARG 0 index
+			ARG 1 x
+			ARG 2 y
+			ARG 3 width
+			ARG 4 height
+			ARG 5 mouseX
+			ARG 6 mouseY
+			ARG 7 selected
 		METHOD b mouseReleased (IIIIII)V
+			ARG 0 index
+			ARG 1 x
+			ARG 2 y
+			ARG 3 button
+			ARG 4 relativeX
+			ARG 5 relativeY
+	FIELD u controls Lnone/ayk;
 	FIELD v mc Lnone/avf;
+	FIELD w slots [Lnone/awe$a;
+	FIELD x maxListLabelWidth I
+	METHOD <init> (Lnone/ayk;Lnone/avf;)V
+		ARG 0 controls
+		ARG 1 mc
 	METHOD b getListItemCount ()I
 	METHOD b getSlot (I)Lnone/awe$a;
+		ARG 0 index
 	METHOD c getListWidth ()I
 	METHOD d getScrollbarHorizontalPosition ()I
 CLASS none/ayk net/minecraft/client/gui/GuiControls
+	FIELD f buttonId Lnone/avc;
 	METHOD a keyTyped (CI)V
 	METHOD a drawScreen (IIF)V
 	METHOD a mouseClicked (III)V
