@@ -6417,10 +6417,10 @@ CLASS none/ub net/minecraft/entity/passive/EntityWolf
 	METHOD r attackEntityAsMob (Lnone/pl;)Z
 	METHOD t_ update ()V
 	METHOD z getIdleSound ()Ljava/lang/String;
-CLASS none/ud
+CLASS none/ud net/minecraft/entity/boss/IBossDisplayData
 	METHOD bn getHealth ()F
 	METHOD bu getMaxHealth ()F
-	METHOD f_ ()Lnone/ev;
+	METHOD f_ getDisplayName ()Lnone/ev;
 CLASS none/ue net/minecraft/entity/IEntityMultiPart
 	METHOD a getWorld ()Lnone/adn;
 	METHOD a (Lnone/uf;Lnone/ox;F)Z
