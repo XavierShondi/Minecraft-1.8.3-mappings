@@ -20355,6 +20355,11 @@ CLASS none/box
 		FIELD d particle Lnone/bmj;
 		METHOD a setParticle (Lnone/bmj;)Lnone/box$a;
 CLASS none/bpb net/minecraft/client/audio/PositionedSound
+CLASS none/bpc net/minecraft/client/audio/MovingSound
+	FIELD j donePlaying Z
+	METHOD <init> (Lnone/jz;)V
+		ARG 0 location
+	METHOD k isDonePlaying ()Z
 CLASS none/bph net/minecraft/sound/EnumSoundType
 	FIELD a MASTER Lnone/bph;
 	FIELD b MUSIC Lnone/bph;
@@ -20378,6 +20383,7 @@ CLASS none/bpi
 			FIELD a FILE Lnone/bpi$a$a;
 			FIELD b SOUND_EVENT Lnone/bpi$a$a;
 CLASS none/bpk net/minecraft/client/audio/ISound
+	METHOD k isDonePlaying ()Z
 CLASS none/bpo
 	FIELD f playerNbt Lnone/dp;
 	METHOD a getRejectionMessage (Ljava/net/SocketAddress;Lcom/mojang/authlib/GameProfile;)Ljava/lang/String;
