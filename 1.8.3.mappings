@@ -16938,25 +16938,93 @@ CLASS none/awd net/minecraft/client/gui/button/GuiButtonLock
 	METHOD a drawButton (Lnone/avf;II)V
 	METHOD b setLocked (Z)V
 	METHOD c isLocked ()Z
-CLASS none/awe
+CLASS none/awe net/minecraft/client/gui/GuiListExtended
 	CLASS none/awe$a IGuiSlot
+		METHOD a setSelected (III)V
+			ARG 0 index
+			ARG 1 mouseX
+			ARG 2 mouseY
+		METHOD a mouseClicked (IIIIII)Z
+			ARG 0 index
+			ARG 1 mouseX
+			ARG 2 mouseY
+			ARG 3 mouseButton
+			ARG 4 mouseXWithinItem
+			ARG 5 mouseYWithinItem
+		METHOD a drawEntry (IIIIIIIZ)V
+			ARG 0 index
+			ARG 1 x
+			ARG 2 y
+			ARG 3 width
+			ARG 4 height
+			ARG 5 mouseX
+			ARG 6 mouseY
+			ARG 7 hovering
+		METHOD b mouseReleased (IIIIII)V
+			ARG 0 index
+			ARG 1 mouseX
+			ARG 2 mouseY
+			ARG 3 mouseButton
+			ARG 4 mouseXWithinItem
+			ARG 5 mouseYWithinItem
+	METHOD <init> (Lnone/avf;IIIII)V
+		ARG 0 mc
+		ARG 1 guiWidth
+		ARG 2 guiHeight
+		ARG 3 top
+		ARG 4 bottom
+		ARG 5 listItemHeight
 	METHOD a drawBackground ()V
 	METHOD a isListItemSelected (I)Z
+		ARG 0 index
+	METHOD a setSelected (III)V
+		ARG 0 index
+		ARG 1 mouseX
+		ARG 2 mouseY
 	METHOD a drawListItem (IIIIII)V
+		ARG 0 index
+		ARG 1 x
+		ARG 2 y
+		ARG 3 listItemHeight
+		ARG 4 mouseX
+		ARG 5 mouseY
 	METHOD a selectItem (IZII)V
+		ARG 0 index
+		ARG 1 isDoubleClicked
+		ARG 2 mouseX
+		ARG 3 mouseY
 	METHOD b getSlot (I)Lnone/awe$a;
+		ARG 0 index
+	METHOD b mouseClicked (III)Z
+		ARG 0 mouseX
+		ARG 1 mouseY
+		ARG 2 mouseButton
+	METHOD c mouseReleased (III)Z
+		ARG 0 mouseX
+		ARG 1 mouseY
+		ARG 2 mouseButton
 CLASS none/awf net/minecraft/client/gui/button/GuiSmallButton
 	METHOD c returnEnumOptions ()Lnone/avi$a;
 CLASS none/awg
 	CLASS none/awg$a
 		FIELD a mc Lnone/avf;
+		METHOD a setSelected (III)V
+		METHOD a mouseClicked (IIIIII)Z
+		METHOD a drawEntry (IIIIIIIZ)V
+		METHOD b mouseReleased (IIIIII)V
 	METHOD b getListItemCount ()I
 	METHOD b getSlot (I)Lnone/awe$a;
 	METHOD c getListWidth ()I
 	METHOD d getScrollbarHorizontalPosition ()I
 CLASS none/awh
+	CLASS none/awh$d
+		METHOD a setSelected (III)V
+		METHOD a mouseClicked (IIIIII)Z
+		METHOD a drawEntry (IIIIIIIZ)V
+		METHOD b mouseReleased (IIIIII)V
 	METHOD b getListItemCount ()I
 	METHOD b getSlot (I)Lnone/awe$a;
+	METHOD b mouseClicked (III)Z
 	METHOD c getListWidth ()I
 	METHOD d getScrollbarHorizontalPosition ()I
 CLASS none/awi net/minecraft/client/gui/GuiScoreboard
@@ -16998,6 +17066,7 @@ CLASS none/awj net/minecraft/client/gui/GuiScrolledSelectionList
 	METHOD a drawScreen (IIF)V
 		ARG 0 mouseX
 		ARG 1 mouseY
+	METHOD a setSelected (III)V
 	METHOD a setDimensions (IIII)V
 		ARG 0 width
 		ARG 1 height
@@ -17433,6 +17502,16 @@ CLASS none/ayh net/minecraft/client/gui/ILoadableGui
 	FIELD c_ LOADING_BAR [Ljava/lang/String;
 	METHOD a onLoaded ()V
 CLASS none/ayj
+	CLASS none/ayj$a
+		METHOD a setSelected (III)V
+		METHOD a mouseClicked (IIIIII)Z
+		METHOD a drawEntry (IIIIIIIZ)V
+		METHOD b mouseReleased (IIIIII)V
+	CLASS none/ayj$b
+		METHOD a setSelected (III)V
+		METHOD a mouseClicked (IIIIII)Z
+		METHOD a drawEntry (IIIIIIIZ)V
+		METHOD b mouseReleased (IIIIII)V
 	FIELD v mc Lnone/avf;
 	METHOD b getListItemCount ()I
 	METHOD b getSlot (I)Lnone/awe$a;
@@ -17627,10 +17706,18 @@ CLASS none/azi net/minecraft/client/gui/GuiMultiplayer
 	METHOD m onGuiClosed ()V
 CLASS none/azj net/minecraft/client/gui/GuiSlotServer
 	FIELD a mc Lnone/avf;
+	METHOD a setSelected (III)V
+	METHOD a mouseClicked (IIIIII)Z
+	METHOD a drawEntry (IIIIIIIZ)V
+	METHOD b mouseReleased (IIIIII)V
 CLASS none/azk net/minecraft/client/gui/GuiLanServerSlot
 	FIELD a minecraft Lnone/avf;
 	FIELD c guiMultiplayer Lnone/azi;
 	FIELD d lastUpdated J
+	METHOD a setSelected (III)V
+	METHOD a mouseClicked (IIIIII)Z
+	METHOD a drawEntry (IIIIIIIZ)V
+	METHOD b mouseReleased (IIIIII)V
 CLASS none/azl net/minecraft/client/gui/GuiServerSlot
 	FIELD a logger Lorg/apache/logging/log4j/Logger;
 	FIELD c UNKNOWN_SERVER_PNG Lnone/jz;
@@ -17640,6 +17727,10 @@ CLASS none/azl net/minecraft/client/gui/GuiServerSlot
 	FIELD g serverData Lnone/bdf;
 	FIELD h resourceLocation Lnone/jz;
 	FIELD j textureImage Lnone/bma;
+	METHOD a setSelected (III)V
+	METHOD a mouseClicked (IIIIII)Z
+	METHOD a drawEntry (IIIIIIIZ)V
+	METHOD b mouseReleased (IIIIII)V
 CLASS none/azm
 	FIELD u guiMultiplayer Lnone/azi;
 	FIELD v serverSlots Ljava/util/List;
@@ -17665,6 +17756,10 @@ CLASS none/azp net/minecraft/client/gui/GuiSelectResourcePack
 CLASS none/azq
 	FIELD a minecraft Lnone/avf;
 	FIELD c RESOURCE_PACKS_PNG Lnone/jz;
+	METHOD a setSelected (III)V
+	METHOD a mouseClicked (IIIIII)Z
+	METHOD a drawEntry (IIIIIIIZ)V
+	METHOD b mouseReleased (IIIIII)V
 CLASS none/azu net/minecraft/client/gui/GuiResourcePackAvailableList
 	METHOD e getTitle ()Ljava/lang/String;
 CLASS none/azv net/minecraft/client/gui/GuiResourcePackList
@@ -20383,6 +20478,7 @@ CLASS none/bpi
 			FIELD a FILE Lnone/bpi$a$a;
 			FIELD b SOUND_EVENT Lnone/bpi$a$a;
 CLASS none/bpk net/minecraft/client/audio/ISound
+CLASS none/bpl net/minecraft/client/audio/ITickableSound
 	METHOD k isDonePlaying ()Z
 CLASS none/bpo
 	FIELD f playerNbt Lnone/dp;
