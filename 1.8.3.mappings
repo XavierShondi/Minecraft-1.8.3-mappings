@@ -5670,7 +5670,7 @@ CLASS none/ps net/minecraft/entity/EntityLiving
 	METHOD s collideWithEntity (Lnone/pl;)V
 	METHOD t isVisible (Lnone/pl;)Z
 	METHOD t_ update ()V
-CLASS none/pt net/minecraft/entity/EntityMob
+CLASS none/pt net/minecraft/entity/EntityCreature
 	CLASS none/pt$a EnumMobType
 		FIELD a ON_GROUND Lnone/pt$a;
 		FIELD b IN_AIR Lnone/pt$a;
@@ -5749,7 +5749,7 @@ CLASS none/px net/minecraft/entity/EnumCreatureAttribute
 CLASS none/py net/minecraft/entity/ITamable
 	METHOD b getOwner ()Ljava/lang/String;
 	METHOD m_ getTamableEntity ()Lnone/pl;
-CLASS none/pz net/minecraft/entity/EntityCreature
+CLASS none/pz net/minecraft/entity/EntityMob
 	FIELD bk FLEEING_SPEED_ID Ljava/util/UUID;
 	FIELD bl FLEEING_SPEED_BONUS Lnone/qe;
 	METHOD cf getNoAI ()Z
