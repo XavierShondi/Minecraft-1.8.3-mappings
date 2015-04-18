@@ -15412,19 +15412,23 @@ CLASS none/arr net/minecraft/world/gen/layer/GenLayerDeepOcean
 		ARG 1 zPos
 		ARG 2 xSize
 		ARG 3 zSize
-CLASS none/ars
+CLASS none/ars net/minecraft/world/gen/layer/GenLayerEdge
+	CLASS none/ars$a Mode
+		FIELD a COOL_WARM Lnone/ars$a;
+		FIELD b HEAT_ICE Lnone/ars$a;
+		FIELD c SPECIAL Lnone/ars$a;
 	METHOD a getInts (IIII)[I
-CLASS none/art
+CLASS none/art net/minecraft/world/gen/layer/GenLayerAddIsland
 	METHOD a getInts (IIII)[I
-CLASS none/aru
+CLASS none/aru net/minecraft/world/gen/layer/GenLayerAddMushroomIsland
 	METHOD a getInts (IIII)[I
-CLASS none/arv
+CLASS none/arv net/minecraft/world/gen/layer/GenLayerAddSnow
 	METHOD a getInts (IIII)[I
-CLASS none/arw
+CLASS none/arw net/minecraft/world/gen/layer/GenLayerBiomeEdge
 	METHOD a getInts (IIII)[I
-CLASS none/arx
+CLASS none/arx net/minecraft/world/gen/layer/GenLayerBiome
 	METHOD a getInts (IIII)[I
-CLASS none/asb
+CLASS none/asb net/minecraft/world/gen/layer/GenLayerFuzzyZoom
 	METHOD b smoothBiomesElseRandom (IIII)I
 CLASS none/asd net/minecraft/world/gen/layer/IntCache
 	FIELD a intCacheSize I
@@ -15435,9 +15439,11 @@ CLASS none/asd net/minecraft/world/gen/layer/IntCache
 	METHOD a resetIntCache ()V
 	METHOD a getIntCache (I)[I
 	METHOD b getDebugInfo ()Ljava/lang/String;
-CLASS none/ase
+CLASS none/ase net/minecraft/world/gen/player/GenLayerIsland
 	METHOD a getInts (IIII)[I
 CLASS none/asf net/minecraft/world/gen/layer/GenLayerBase
+	CLASS none/asf$2
+		METHOD a call ()Ljava/lang/String;
 	FIELD a sourceLayer Lnone/asf;
 	FIELD b baseSeed J
 	FIELD c levelGenSeed J
@@ -15445,6 +15451,7 @@ CLASS none/asf net/minecraft/world/gen/layer/GenLayerBase
 	METHOD <init> (J)V
 		ARG 0 baseSeed
 	METHOD a nextInt (I)I
+		ARG 0 x
 	METHOD a biomesEqualOrMesaPlateau (II)Z
 		ARG 0 biomeID1
 		ARG 1 biomeID2
@@ -15471,12 +15478,12 @@ CLASS none/asf net/minecraft/world/gen/layer/GenLayerBase
 		ARG 1 biomeID2
 		ARG 2 biomeID3
 		ARG 3 biomeID4
-CLASS none/asg
+CLASS none/asg net/minecraft/world/gen/layer/GenLayerRareBiome
 	METHOD a getInts (IIII)[I
-CLASS none/ash
-	FIELD c LOGGER Lorg/apache/logging/log4j/Logger;
+CLASS none/ash net/minecraft/world/gen/layer/GenLayerHills
+	FIELD c logger Lorg/apache/logging/log4j/Logger;
 	METHOD a getInts (IIII)[I
-CLASS none/asi
+CLASS none/asi net/minecraft/world/gen/layer/GenLayerRemoveTooMuchOcean
 	METHOD a getInts (IIII)[I
 CLASS none/asj net/minecraft/world/gen/layer/GenLayerRiverInit
 	METHOD <init> (JLnone/asf;)V
@@ -15487,16 +15494,16 @@ CLASS none/asj net/minecraft/world/gen/layer/GenLayerRiverInit
 		ARG 1 zPos
 		ARG 2 xSize
 		ARG 3 zSize
-CLASS none/ask
+CLASS none/ask net/minecraft/world/gen/layer/GenLayerRiver
 	METHOD a getInts (IIII)[I
-CLASS none/asl
+CLASS none/asl net/minecraft/world/gen/layer/GenLayerRiverMix
 	METHOD a getInts (IIII)[I
 	METHOD a initializeLevelGenSeed (J)V
-CLASS none/asm
+CLASS none/asm net/minecraft/world/gen/layer/GenLayerShore
 	METHOD a getInts (IIII)[I
-CLASS none/asn
+CLASS none/asn net/minecraft/world/gen/layer/GenLayerSmooth
 	METHOD a getInts (IIII)[I
-CLASS none/asr
+CLASS none/asr net/minecraft/world/gen/layer/GenLayerVoronoiZoom
 	METHOD a getInts (IIII)[I
 CLASS none/ass net/minecraft/world/gen/layer/GenLayerZoom
 	METHOD <init> (JLnone/asf;)V
