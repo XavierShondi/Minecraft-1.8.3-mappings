@@ -17757,21 +17757,34 @@ CLASS none/azl net/minecraft/client/gui/GuiServerSlot
 	METHOD a mouseClicked (IIIIII)Z
 	METHOD a drawEntry (IIIIIIIZ)V
 	METHOD b mouseReleased (IIIIII)V
-CLASS none/azm
+CLASS none/azm net/minecraft/client/gui/ServerSelectionList
 	FIELD u guiMultiplayer Lnone/azi;
 	FIELD v serverSlots Ljava/util/List;
 	FIELD w lanServerSlots Ljava/util/List;
 	FIELD x guiSlot Lnone/awe$a;
+	FIELD y selectedSlot I
 	METHOD <init> (Lnone/azi;Lnone/avf;IIIII)V
 		ARG 0 guiMultiplayer
 		ARG 1 minecraft
+		ARG 2 width
+		ARG 3 height
+		ARG 4 top
+		ARG 5 bottom
+		ARG 6 listItemHeight
 	METHOD a isListItemSelected (I)Z
+		ARG 0 index
+	METHOD a setLanServers (Ljava/util/List;)V
+		ARG 0 lanServers
 	METHOD a loadServersFromStorage (Lnone/bdg;)V
+		ARG 0 storage
 	METHOD b getListItemCount ()I
 	METHOD b getSlot (I)Lnone/awe$a;
 		ARG 0 index
 	METHOD c getListWidth ()I
+	METHOD c setSelectedSlot (I)V
+		ARG 0 selecetedSlot
 	METHOD d getScrollbarHorizontalPosition ()I
+	METHOD e getSelectedSlot ()I
 CLASS none/azp net/minecraft/client/gui/GuiSelectResourcePack
 	METHOD a drawScreen (IIF)V
 	METHOD a mouseClicked (III)V
@@ -20543,7 +20556,7 @@ CLASS none/bpp net/minecraft/server/IntegratedServer
 	METHOD z onTick ()V
 CLASS none/bpq empty/cyo
 CLASS none/bpr net/minecraft/client/network/LanServerDetector
-	CLASS none/bpr$a
+	CLASS none/bpr$a LanServer
 		FIELD c updateTime J
 		METHOD c updateTime ()V
 	CLASS none/bpr$b ThreadLanServerDetector
