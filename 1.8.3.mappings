@@ -17077,6 +17077,7 @@ CLASS none/awj net/minecraft/client/gui/GuiScrolledSelectionList
 	FIELD n amountScrolled F
 	FIELD o selectedElement I
 	FIELD p lastClicked J
+	FIELD q visible Z
 	FIELD r showSelectionBox Z
 	FIELD s hasListHeader Z
 	FIELD t headerPadding I
@@ -17230,16 +17231,32 @@ CLASS none/awt net/minecraft/client/gui/GuiSlotRealmsProxy
 	METHOD f getMouseY ()I
 	METHOD g getMouseX ()I
 	METHOD k getScrolledHeight ()I
-CLASS none/awu
+CLASS none/awu net/minecraft/client/gui/GuiSimpleScrolledSelectionListProxy
 	FIELD u selectionList Lnet/minecraft/realms/RealmsSimpleScrolledSelectionList;
+	METHOD <init> (Lnet/minecraft/realms/RealmsSimpleScrolledSelectionList;IIIII)V
+		ARG 0 selectionList
+		ARG 1 width
+		ARG 2 rheight
+		ARG 3 top
+		ARG 4 bottom
+		ARG 5 slotHeight
 	METHOD a drawBackground ()V
 	METHOD a isListItemSelected (I)Z
+		ARG 0 index
 	METHOD a drawScreen (IIF)V
+		ARG 0 mouseX
+		ARG 1 mouseY
 	METHOD a drawListItem (IIIIII)V
 	METHOD a selectItem (IZII)V
+		ARG 0 index
+		ARG 1 doubleClick
+		ARG 2 mouseX
+		ARG 3 mouseY
 	METHOD b getListItemCount ()I
 	METHOD d getScrollbarHorizontalPosition ()I
 	METHOD e getGuiWidth ()I
+	METHOD f getMouseY ()I
+	METHOD g getMouseX ()I
 	METHOD k getScrolledHeight ()I
 CLASS none/awv net/minecraft/client/gui/GuiChatOptions
 	METHOD a drawScreen (IIF)V
@@ -21110,6 +21127,14 @@ CLASS net/minecraft/client/ClientBrandRetriever net/minecraft/client/ClientBrand
 	METHOD getClientModName getClientModName ()Ljava/lang/String;
 CLASS net/minecraft/realms/RealmsServerStatusPinger
 CLASS net/minecraft/realms/RealmsScrolledSelectionList net/minecraft/realms/RealmsScrolledSelectionList
+	METHOD getItemCount getItemCount ()I
+	METHOD getMaxPosition getMaxPosition ()I
+	METHOD getScrollbarPosition getScrollbarPosition ()I
+	METHOD isSelectedItem isSelectedItem (I)Z
+	METHOD renderBackground renderBackground ()V
+	METHOD renderItem renderItem (IIIIII)V
+	METHOD selectItem selectItem (IZII)V
+CLASS net/minecraft/realms/RealmsSimpleScrolledSelectionList net/minecraft/realms/RealmsSimpleScrolledSelectionList
 	METHOD getItemCount getItemCount ()I
 	METHOD getMaxPosition getMaxPosition ()I
 	METHOD getScrollbarPosition getScrollbarPosition ()I
