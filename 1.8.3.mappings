@@ -17160,17 +17160,32 @@ CLASS none/awq net/minecraft/client/gui/button/bvr
 	METHOD b getButtonWidth ()I
 	METHOD b mouseDragged (Lnone/avf;II)V
 	METHOD c mousePressed (Lnone/avf;II)Z
-CLASS none/awr
+CLASS none/awr net/minecraft/client/gui/GuiClickableScrolledSelectionListProxy
 	FIELD u selectionList Lnet/minecraft/realms/RealmsClickableScrolledSelectionList;
+	METHOD <init> (Lnet/minecraft/realms/RealmsClickableScrolledSelectionList;IIIII)V
+		ARG 0 selectionList
+		ARG 1 width
+		ARG 2 height
+		ARG 3 top
+		ARG 4 rbottom
+		ARG 5 slotHeight
 	METHOD a drawBackground ()V
 	METHOD a isListItemSelected (I)Z
+		ARG 0 index
 	METHOD a drawListItem (IIIIII)V
 	METHOD a drawSelectedListItem (IIILnet/minecraft/realms/Tezzelator;)V
+		ARG 3 tezzelator
 	METHOD a selectItem (IZII)V
+		ARG 0 index
+		ARG 1 doubleClick
+		ARG 2 mouseX
+		ARG 3 mouseY
 	METHOD b getListItemCount ()I
 	METHOD b drawSelectionBox (IIII)V
 	METHOD d getScrollbarHorizontalPosition ()I
 	METHOD e getGuiWidth ()I
+	METHOD f getMouseY ()I
+	METHOD g getMouseX ()I
 	METHOD k getScrolledHeight ()I
 CLASS none/aws net/minecraft/client/gui/GuiRealms
 	METHOD a keyTyped (CI)V
@@ -20912,6 +20927,8 @@ CLASS none/bqt net/minecraft/client/renderers/OpenGlHelper
 		ARG 0 texture
 CLASS net/minecraft/client/main/Main
 	CLASS net/minecraft/client/main/Main$2 ThreadClientShutdown
+CLASS net/minecraft/realms/Tezzelator net/minecraft/realms/Tezzelator
+	FIELD instance instance Lnet/minecraft/realms/Tezzelator;
 CLASS net/minecraft/server/MinecraftServer net/minecraft/server/MinecraftServer
 	FIELD A canSpawnAnimals Z
 	FIELD B canSpawnNPCs Z
@@ -21076,3 +21093,13 @@ CLASS net/minecraft/server/MinecraftServer net/minecraft/server/MinecraftServer
 CLASS net/minecraft/client/ClientBrandRetriever net/minecraft/client/ClientBrandRetriever
 	METHOD getClientModName getClientModName ()Ljava/lang/String;
 CLASS net/minecraft/realms/RealmsServerStatusPinger
+CLASS net/minecraft/realms/RealmsClickableScrolledSelectionList net/minecraft/realms/RealmsClickableScrolledSelectionList
+	METHOD customMouseEvent customMouseEvent (IIIFI)V
+	METHOD getItemCount getItemCount ()I
+	METHOD getMaxPosition getMaxPosition ()I
+	METHOD getScrollbarPosition getScrollbarPosition ()I
+	METHOD isSelectedItem isSelectedItem (I)Z
+	METHOD renderBackground renderBackground ()V
+	METHOD renderItem renderItem (IIIIII)V
+	METHOD renderSelected renderSelected (IIILnet/minecraft/realms/Tezzelator;)V
+	METHOD selectItem selectItem (IZII)V
