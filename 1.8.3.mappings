@@ -16579,6 +16579,7 @@ CLASS none/avf net/minecraft/main/Minecraft
 	METHOD aa getMinecraftSessionService ()Lcom/mojang/authlib/minecraft/MinecraftSessionService;
 	METHOD ac isSnooperEnabled ()Z
 	METHOD ad getViewEntity ()Lnone/pl;
+	METHOD ae getBlockRendererDispatcher ()Lnone/bge;
 	METHOD af getEntityRenderer ()Lnone/biv;
 	METHOD ag getItemRenderer ()Lnone/bji;
 	METHOD ah getPlayerRenderer ()Lnone/bfo;
@@ -18197,6 +18198,7 @@ CLASS none/bbt net/minecraft/client/model/TexturedQuad
 	FIELD c invertNormal Z
 	METHOD a flipFace ()V
 CLASS none/bbu net/minecraft/client/renderers/models/Model_ccv
+	FIELD a head Lnone/bcu;
 	METHOD a setRotationAngles (FFFFFFLnone/pl;)V
 	METHOD a render (Lnone/pl;FFFFFF)V
 CLASS none/bbv net/minecraft/client/renderers/models/ModelRabbit
@@ -20023,80 +20025,107 @@ CLASS none/bkn net/minecraft/client/renderers/RenderZombie
 CLASS none/bko
 	FIELD b ENCHANTED_ITEM_GLINT_PNG Lnone/jz;
 	METHOD a render (Lnone/ps;FFFFFFF)V
+	METHOD b shouldCombineTextures ()Z
 CLASS none/bkp
 	METHOD a render (Lnone/ps;FFFFFFF)V
+	METHOD b shouldCombineTextures ()Z
 CLASS none/bkq
 	METHOD a render (Lnone/ps;FFFFFFF)V
+	METHOD b shouldCombineTextures ()Z
 CLASS none/bkr
 	FIELD a renderEnderman Lnone/bit;
 	METHOD a render (Lnone/ps;FFFFFFF)V
+	METHOD b shouldCombineTextures ()Z
 CLASS none/bks net/minecraft/client/renderers/RenderCreeperArmor
 	FIELD a CREEPER_ARMOR_PNG Lnone/jz;
 	FIELD b renderCreeper Lnone/bip;
 	FIELD c modelCreeper Lnone/bbd;
 	METHOD a render (Lnone/ps;FFFFFFF)V
 	METHOD a render (Lnone/vo;FFFFFFF)V
+	METHOD b shouldCombineTextures ()Z
 CLASS none/bkt
 	METHOD a render (Lnone/ps;FFFFFFF)V
+	METHOD b shouldCombineTextures ()Z
 CLASS none/bku
 	METHOD a render (Lnone/ps;FFFFFFF)V
+	METHOD b shouldCombineTextures ()Z
 CLASS none/bkv
 	METHOD a render (Lnone/ps;FFFFFFF)V
+	METHOD b shouldCombineTextures ()Z
 CLASS none/bkw net/minecraft/client/renderers/RenderDragonEyes
 	FIELD a DRAGON_EYES_PNG Lnone/jz;
 	FIELD b renderEnderdragon Lnone/bis;
 	METHOD a render (Lnone/ps;FFFFFFF)V
 	METHOD a render (Lnone/uh;FFFFFFF)V
+	METHOD b shouldCombineTextures ()Z
 CLASS none/bkx net/minecraft/client/renderers/RenderEndermanEyes
 	FIELD a ENDERMAN_EYES_PNG Lnone/jz;
 	FIELD b renderEnderman Lnone/bit;
 	METHOD a render (Lnone/ps;FFFFFFF)V
 	METHOD a render (Lnone/vp;FFFFFFF)V
+	METHOD b shouldCombineTextures ()Z
 CLASS none/bkz
 	METHOD a render (Lnone/ps;FFFFFFF)V
-CLASS none/bla
+	METHOD b shouldCombineTextures ()Z
+CLASS none/bla net/minecraft/client/renderer/entity/layers/LayerMooshroomMushroom
+	FIELD a renderMushroom Lnone/bjq;
+	METHOD <init> (Lnone/bjq;)V
+		ARG 0 renderMushroom
 	METHOD a render (Lnone/ps;FFFFFFF)V
+	METHOD a render (Lnone/ts;FFFFFFF)V
+		ARG 0 rmooshroom
+	METHOD b shouldCombineTextures ()Z
 CLASS none/blb net/minecraft/client/renderers/RenderPigSaddle
 	FIELD a PIG_SADDLE_PNG Lnone/jz;
 	FIELD b renderPig Lnone/bjt;
 	FIELD c modelPig Lnone/bbr;
 	METHOD a render (Lnone/ps;FFFFFFF)V
 	METHOD a render (Lnone/tu;FFFFFFF)V
+	METHOD b shouldCombineTextures ()Z
 CLASS none/blc net/minecraft/client/renderers/IRenderLivingEntityProp
 	METHOD a render (Lnone/ps;FFFFFFF)V
+	METHOD b shouldCombineTextures ()Z
 CLASS none/bld net/minecraft/client/renderers/RenderSheepFur
 	FIELD a SHEEP_FUR_PNG Lnone/jz;
 	FIELD b renderSheep Lnone/bjw;
 	FIELD c modelSheep Lnone/bbw;
 	METHOD a render (Lnone/ps;FFFFFFF)V
 	METHOD a render (Lnone/tw;FFFFFFF)V
+	METHOD b shouldCombineTextures ()Z
 CLASS none/ble
 	METHOD a render (Lnone/ps;FFFFFFF)V
+	METHOD b shouldCombineTextures ()Z
 CLASS none/blf
 	METHOD a render (Lnone/ps;FFFFFFF)V
+	METHOD b shouldCombineTextures ()Z
 CLASS none/blg net/minecraft/client/renderers/RenderSpiderEyes
 	FIELD a SPIDER_EYES_PNG Lnone/jz;
 	FIELD b renderSpider Lnone/bkb;
 	METHOD a render (Lnone/ps;FFFFFFF)V
 	METHOD a render (Lnone/wd;FFFFFFF)V
+	METHOD b shouldCombineTextures ()Z
 CLASS none/bli
 	METHOD a render (Lnone/ps;FFFFFFF)V
 	METHOD a render (Lnone/tz;FFFFFFF)V
+	METHOD b shouldCombineTextures ()Z
 CLASS none/blj
 	FIELD a renderWitch Lnone/bkj;
 	METHOD a render (Lnone/ps;FFFFFFF)V
 	METHOD a render (Lnone/we;FFFFFFF)V
+	METHOD b shouldCombineTextures ()Z
 CLASS none/blk net/minecraft/client/renderers/RenderWitherArmor
 	FIELD a WITHER_ARMOR_PNG Lnone/jz;
 	FIELD b renderWither Lnone/bkk;
 	FIELD c modelWither Lnone/bcm;
 	METHOD a render (Lnone/ps;FFFFFFF)V
 	METHOD a render (Lnone/ul;FFFFFFF)V
+	METHOD b shouldCombineTextures ()Z
 CLASS none/bll net/minecraft/client/renderers/RenderWolfCollar
 	FIELD a WOLF_COLLAR_PNG Lnone/jz;
 	FIELD b renderWolf Lnone/bkm;
 	METHOD a render (Lnone/ps;FFFFFFF)V
 	METHOD a render (Lnone/ub;FFFFFFF)V
+	METHOD b shouldCombineTextures ()Z
 CLASS none/blo net/minecraft/client/renderers/RenderPlayer
 	METHOD a getTextureLocation (Lnone/beu;)Lnone/jz;
 	METHOD a getTextureLocation (Lnone/pl;)Lnone/jz;
