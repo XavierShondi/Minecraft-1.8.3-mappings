@@ -17035,16 +17035,56 @@ CLASS none/awe net/minecraft/client/gui/GuiListExtended
 		ARG 2 mouseButton
 CLASS none/awf net/minecraft/client/gui/button/GuiSmallButton
 	METHOD c returnEnumOptions ()Lnone/avi$a;
-CLASS none/awg
-	CLASS none/awg$a
+CLASS none/awg net/minecraft/client/gui/GuiOptionsRowList
+	CLASS none/awg$a Row
 		FIELD a mc Lnone/avf;
+		FIELD b button1 Lnone/avt;
+		FIELD c button2 Lnone/avt;
+		METHOD <init> (Lnone/avt;Lnone/avt;)V
+			ARG 0 button1
+			ARG 1 button2
 		METHOD a setSelected (III)V
+			ARG 0 index
+			ARG 1 mouseX
+			ARG 2 mouseY
 		METHOD a mouseClicked (IIIIII)Z
+			ARG 1 mouseX
+			ARG 2 mouseY
 		METHOD a drawEntry (IIIIIIIZ)V
+			ARG 0 index
+			ARG 1 x
+			ARG 2 y
+			ARG 3 width
+			ARG 4 slotHeight
+			ARG 5 mouseX
+			ARG 6 mouseY
+			ARG 7 selected
 		METHOD b mouseReleased (IIIIII)V
+			ARG 0 index
+			ARG 1 x
+			ARG 2 y
+			ARG 3 mouseEvent
+			ARG 4 relativeX
+			ARG 5 relativeY
+	FIELD u rowList Ljava/util/List;
+	METHOD <init> (Lnone/avf;IIIII[Lnone/avi$a;)V
+		ARG 0 mc
+		ARG 1 width
+		ARG 2 height
+		ARG 3 top
+		ARG 4 bottom
+		ARG 5 slotHeight
+		ARG 6 options
+	METHOD a createOptionButton (Lnone/avf;IILnone/avi$a;)Lnone/avt;
+		ARG 0 mc
+		ARG 1 x
+		ARG 2 y
+		ARG 3 options
 	METHOD b getListItemCount ()I
 	METHOD b getSlot (I)Lnone/awe$a;
 	METHOD c getListWidth ()I
+	METHOD c getRow (I)Lnone/awg$a;
+		ARG 0 index
 	METHOD d getScrollbarHorizontalPosition ()I
 CLASS none/awh
 	CLASS none/awh$d
