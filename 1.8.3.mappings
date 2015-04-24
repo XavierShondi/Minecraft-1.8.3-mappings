@@ -4434,6 +4434,7 @@ CLASS none/nl net/minecraft/util/CaseInsensitiveHashMap
 		ARG 0 key
 	METHOD size ()I
 	METHOD values ()Ljava/util/Collection;
+CLASS none/nn net/minecraft/util/IntHashMap
 CLASS none/np net/minecraft/network/EventLoopFactory
 	FIELD a eventLoop Ljava/lang/Object;
 	FIELD b isCreated Z
@@ -16947,7 +16948,8 @@ CLASS none/avx net/minecraft/client/gui/GuiTextField
 	METHOD b getText ()Ljava/lang/String;
 	METHOD b setFocused (Z)V
 	METHOD g drawTextBox ()V
-CLASS none/avy net/minecraft/client/gui/button/bum
+CLASS none/avy net/minecraft/client/gui/GuiSlider
+	CLASS none/avy$a FormatHelper
 	METHOD a mouseReleased (II)V
 	METHOD a getHoverState (Z)I
 	METHOD b mouseDragged (Lnone/avf;II)V
@@ -17087,12 +17089,39 @@ CLASS none/awg net/minecraft/client/gui/GuiOptionsRowList
 	METHOD c getRow (I)Lnone/awg$a;
 		ARG 0 index
 	METHOD d getScrollbarHorizontalPosition ()I
-CLASS none/awh
+CLASS none/awh net/minecraft/client/gui/GuiPageButtonList
+	CLASS none/awh$a GuiButtonEntry
+	CLASS none/awh$b GuiResponder
+	CLASS none/awh$c EditBoxEntry
+		FIELD a predicate Lcom/google/common/base/Predicate;
+		METHOD <init> (ILjava/lang/String;ZLcom/google/common/base/Predicate;)V
+			ARG 3 predicate
+		METHOD a getPredicate ()Lcom/google/common/base/Predicate;
 	CLASS none/awh$d
+		FIELD a mc Lnone/avf;
 		METHOD a setSelected (III)V
 		METHOD a mouseClicked (IIIIII)Z
 		METHOD a drawEntry (IIIIIIIZ)V
 		METHOD b mouseReleased (IIIIII)V
+	CLASS none/awh$e GuiLabelEntry
+	CLASS none/awh$f GuiListEntry
+	CLASS none/awh$g GuiSlideEntry
+		FIELD a formatHelper Lnone/avy$a;
+		METHOD <init> (ILjava/lang/String;ZLnone/avy$a;FFF)V
+			ARG 3 formatHelper
+		METHOD a getFormatHelper ()Lnone/avy$a;
+	FIELD w textFields Ljava/util/List;
+	FIELD x entries [[Lnone/awh$f;
+	FIELD z guiResponder Lnone/awh$b;
+	METHOD <init> (Lnone/avf;IIIIILnone/awh$b;[[Lnone/awh$f;)V
+		ARG 0 mc
+		ARG 1 width
+		ARG 2 height
+		ARG 3 top
+		ARG 4 bottom
+		ARG 5 slotHeight
+		ARG 6 guiResponder
+		ARG 7 entries
 	METHOD b getListItemCount ()I
 	METHOD b getSlot (I)Lnone/awe$a;
 	METHOD b mouseClicked (III)Z
