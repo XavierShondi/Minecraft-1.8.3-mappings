@@ -16855,6 +16855,7 @@ CLASS none/avo net/minecraft/client/renderers/FontRenderer
 	METHOD a getStringWidth (Ljava/lang/String;)I
 	METHOD a drawStringWithShadow (Ljava/lang/String;FFI)I
 	METHOD a drawString (Ljava/lang/String;III)I
+	METHOD a trimStringToWidth (Ljava/lang/String;IZ)Ljava/lang/String;
 	METHOD a onReload (Lnone/bnj;)V
 	METHOD a setUnicodeFlag (Z)V
 	METHOD b setBidiFlag (Z)V
@@ -16953,10 +16954,13 @@ CLASS none/avu net/minecraft/client/gui/GuiNewChat
 	METHOD d resetScroll ()V
 	METHOD e getChatOpen ()Z
 	METHOD h getChatScale ()F
-CLASS none/avv
-	METHOD a (Ljava/lang/String;Z)Ljava/lang/String;
+CLASS none/avv net/minecraft/client/gui/GuiUtilRenderComponents
+	METHOD a stripColors (Ljava/lang/String;Z)Ljava/lang/String;
 		ARG 0 message
 		ARG 1 keepColors
+	METHOD a (Lnone/ev;ILnone/avo;ZZ)Ljava/util/List;
+		ARG 0 chatComponent
+		ARG 2 fontRenderer
 CLASS none/avw net/minecraft/client/gui/GuiDebug
 	FIELD a minecraft Lnone/avf;
 	FIELD f fontRenderer Lnone/avo;
@@ -19563,6 +19567,11 @@ CLASS none/bgg net/minecraft/client/renderer/BlockModelRenderer
 		FIELD k FLIP_WEST Lnone/bgg$d;
 		FIELD l FLIP_EAST Lnone/bgg$d;
 	METHOD a tesselateBlockModel (Lnone/adr;Lnone/bor;Lnone/ama;Lnone/ck;Lnone/bfe;Z)Z
+CLASS none/bgh net/minecraft/renderer/block/model/BakedQuad
+	FIELD c facing Lnone/cr;
+	METHOD <init> ([IILnone/cr;)V
+		ARG 2 facing
+	METHOD d getFacing ()Lnone/cr;
 CLASS none/bgm
 	CLASS none/bgm$c cmg
 	FIELD a GSON_BUILDER Lcom/google/gson/Gson;
@@ -20787,8 +20796,9 @@ CLASS none/bou
 CLASS none/bov
 	METHOD a getMissingModel ()Lnone/bor;
 	METHOD a onReload (Lnone/bnj;)V
-CLASS none/bow
+CLASS none/bow net/minecraft/client/resources/model/ModelResourceLocation
 	METHOD equals (Ljava/lang/Object;)Z
+		ARG 0 otherLocation
 	METHOD hashCode ()I
 	METHOD toString getFullName ()Ljava/lang/String;
 CLASS none/box net/minecraft/client/resources/model/SimpleBakedModel
