@@ -16882,8 +16882,27 @@ CLASS none/avq net/minecraft/client/gui/Gui
 	METHOD b drawVerticalLine (IIII)V
 	METHOD b drawTexturedModalRect (IIIIII)V
 	METHOD c drawString (Lnone/avo;Ljava/lang/String;III)V
-CLASS none/avr
+CLASS none/avr net/minecraft/client/gui/MapItemRenderer
+	CLASS none/avr$a Instance
+		FIELD b mapData Lnone/ath;
+		FIELD c textureImage Lnone/bma;
+		FIELD d resourceLocation Lnone/jz;
+		FIELD e textureData [I
+		METHOD <init> (Lnone/avr;Lnone/ath;)V
+			ARG 1 mapData
+		METHOD a update ()V
 	FIELD a MAP_ICONS_PNG Lnone/jz;
+	FIELD b textureManager Lnone/bmk;
+	FIELD c loadedMaps Ljava/util/Map;
+	METHOD <init> (Lnone/bmk;)V
+		ARG 0 textureManager
+	METHOD a clearMaps ()V
+	METHOD a updateMap (Lnone/ath;)V
+		ARG 0 mapData
+	METHOD a (Lnone/ath;Z)V
+		ARG 0 mapData
+	METHOD b getOrMakeInstance (Lnone/ath;)Lnone/avr$a;
+		ARG 0 mapData
 CLASS none/avs net/minecraft/client/gui/ScaledResolution
 	METHOD a getScaledWidth ()I
 	METHOD b getScaledHeight ()I
@@ -20397,6 +20416,8 @@ CLASS none/blz net/minecraft/client/texture/TextureBase
 	METHOD c delete ()V
 CLASS none/bma net/minecraft/client/texture/TextureImage
 	METHOD a load (Lnone/bnj;)V
+	METHOD d updateDynamicTexture ()V
+	METHOD e getTextureData ()[I
 CLASS none/bmb net/minecraft/client/texture/TextureDownloadable
 	FIELD g LOGGER Lorg/apache/logging/log4j/Logger;
 	FIELD h DOWNLOADER_NUMBER Ljava/util/concurrent/atomic/AtomicInteger;
@@ -20475,6 +20496,7 @@ CLASS none/bmk net/minecraft/client/texture/TextureManager
 	METHOD a onReload (Lnone/bnj;)V
 	METHOD a bindTexture (Lnone/jz;)V
 	METHOD a loadTexture (Lnone/jz;Lnone/bml;)Z
+	METHOD c deleteTexture (Lnone/jz;)V
 	METHOD e tick ()V
 CLASS none/bml net/minecraft/client/texture/ITexture
 	METHOD a load (Lnone/bnj;)V
