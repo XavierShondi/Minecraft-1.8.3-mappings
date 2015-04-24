@@ -125,7 +125,7 @@ CLASS none/c net/minecraft/crash/CrashReportCategory
 		ARG 1 callable
 	METHOD a getDetailsReport (Ljava/lang/StringBuilder;)V
 		ARG 0 reportStringBuilder
-	METHOD a (Lnone/c;Lnone/ck;Lnone/afi;I)V
+	METHOD a addBlockInfo (Lnone/c;Lnone/ck;Lnone/afi;I)V
 		ARG 0 crashLogInfo
 	METHOD a (Lnone/c;Lnone/ck;Lnone/ama;)V
 		ARG 0 crashLogInfo
@@ -19457,6 +19457,9 @@ CLASS none/bge net/minecraft/client/renderer/BlockRendererDispatcher
 	METHOD a getBlockModelShapes ()Lnone/bgd;
 	METHOD a (Lnone/afi;I)Z
 		ARG 0 block
+		ARG 1 unused
+	METHOD a (Lnone/ama;F)V
+		ARG 0 blockState
 	METHOD a getModelFromBlockState (Lnone/ama;Lnone/adr;Lnone/ck;)Lnone/bor;
 		ARG 0 blockState
 		ARG 1 blockAccess
@@ -19465,6 +19468,10 @@ CLASS none/bge net/minecraft/client/renderer/BlockRendererDispatcher
 		ARG 0 blockState
 		ARG 1 blockPos
 	METHOD a tryTesselateBlock (Lnone/ama;Lnone/ck;Lnone/adr;Lnone/bfe;)Z
+		ARG 0 blockState
+		ARG 1 blockPos
+		ARG 2 blockAccess
+		ARG 3 bufferBuilder
 	METHOD a (Lnone/ama;Lnone/ck;Lnone/bmj;Lnone/adr;)V
 		ARG 0 blockState
 		ARG 1 blockPos
@@ -20705,7 +20712,9 @@ CLASS none/bow
 	METHOD equals (Ljava/lang/Object;)Z
 	METHOD hashCode ()I
 	METHOD toString getFullName ()Ljava/lang/String;
-CLASS none/box
+CLASS none/box net/minecraft/client/resources/model/SimpleBakedModel
+	CLASS none/box$a Builder
+CLASS none/boy net/minecraft/client/resources/model/WeightedBakedModel
 CLASS none/bpb net/minecraft/client/audio/PositionedSound
 CLASS none/bpc net/minecraft/client/audio/MovingSound
 	FIELD j donePlaying Z
