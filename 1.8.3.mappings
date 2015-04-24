@@ -13425,11 +13425,23 @@ CLASS none/amb net/minecraft/block/BlockPropertyManager
 	METHOD c getBlock ()Lnone/afi;
 	METHOD d getProperties ()Ljava/util/Collection;
 	METHOD toString ()Ljava/lang/String;
-CLASS none/amd
-	FIELD a dim Lnone/adn;
-	FIELD b blockCoords Lnone/ck;
+CLASS none/amd net/minecraft/block/state/BlockWorldState
+	CLASS none/amd$1
+		METHOD a apply (Lnone/amd;)Z
+			ARG 0 state
+	FIELD a dimension Lnone/adn;
+	FIELD b blockPos Lnone/ck;
 	FIELD d blockState Lnone/ama;
 	FIELD e blockEntity Lnone/akx;
+	FIELD f blockEntityLoaded Z
+	METHOD <init> (Lnone/adn;Lnone/ck;Z)V
+		ARG 0 dimension
+		ARG 1 blockPos
+	METHOD a getBlockState ()Lnone/ama;
+	METHOD a hasState (Lcom/google/common/base/Predicate;)Lcom/google/common/base/Predicate;
+		ARG 0 predicate
+	METHOD b getBlockEntity ()Lnone/akx;
+	METHOD d getPos ()Lnone/ck;
 CLASS none/ame
 	CLASS none/ame$a
 		FIELD a dim Lnone/adn;
