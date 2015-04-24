@@ -19571,7 +19571,7 @@ CLASS none/bgm
 	FIELD f LOGGER Lorg/apache/logging/log4j/Logger;
 	METHOD b (Ljava/lang/String;)Z
 	METHOD e getResourceLocation ()Lnone/jz;
-CLASS none/bgs
+CLASS none/bgs net/minecraft/client/renderer/block/model/ItemCameraTransforms
 	CLASS none/bgs$b EnumCameraType
 		FIELD a NONE Lnone/bgs$b;
 		FIELD b THIRD_PERSON Lnone/bgs$b;
@@ -20743,6 +20743,11 @@ CLASS none/bol net/minecraft/client/resources/data/PackMetadataSectionSerializer
 CLASS none/boo net/minecraft/client/resources/data/TextureMetadataSection
 CLASS none/bop net/minecraft/client/resources/data/TextureMetadataSectionSerializer
 CLASS none/bor net/minecraft/client/resources/model/IBakedModel
+	METHOD b isGui3d ()Z
+	METHOD c isAmbientOcclusionEnabled ()Z
+	METHOD d isBuiltInRenderer ()Z
+	METHOD e getTexture ()Lnone/bmj;
+	METHOD f getItemCameraTransforms ()Lnone/bgs;
 CLASS none/bos net/minecraft/util/BlockModelRotation
 	FIELD a X0_Y0 Lnone/bos;
 	FIELD b X0_Y90 Lnone/bos;
@@ -20760,6 +20765,17 @@ CLASS none/bos net/minecraft/util/BlockModelRotation
 	FIELD n X270_Y90 Lnone/bos;
 	FIELD o X270_Y180 Lnone/bos;
 	FIELD p X270_Y270 Lnone/bos;
+CLASS none/bot net/minecraft/client/resources/model/BuiltInModel
+	FIELD a itemCameraTransforms Lnone/bgs;
+	METHOD <init> (Lnone/bgs;)V
+		ARG 0 itemCameraTransforms
+	METHOD a (Lnone/cr;)Ljava/util/List;
+		ARG 0 facing
+	METHOD b isGui3d ()Z
+	METHOD c isAmbientOcclusionEnabled ()Z
+	METHOD d isBuiltInRenderer ()Z
+	METHOD e getTexture ()Lnone/bmj;
+	METHOD f getItemCameraTransforms ()Lnone/bgs;
 CLASS none/bou
 	FIELD c LOGGER Lorg/apache/logging/log4j/Logger;
 	FIELD e JOINER Lcom/google/common/base/Joiner;
@@ -20777,7 +20793,17 @@ CLASS none/bow
 	METHOD toString getFullName ()Ljava/lang/String;
 CLASS none/box net/minecraft/client/resources/model/SimpleBakedModel
 	CLASS none/box$a Builder
+	METHOD b isGui3d ()Z
+	METHOD c isAmbientOcclusionEnabled ()Z
+	METHOD d isBuiltInRenderer ()Z
+	METHOD e getTexture ()Lnone/bmj;
+	METHOD f getItemCameraTransforms ()Lnone/bgs;
 CLASS none/boy net/minecraft/client/resources/model/WeightedBakedModel
+	METHOD b isGui3d ()Z
+	METHOD c isAmbientOcclusionEnabled ()Z
+	METHOD d isBuiltInRenderer ()Z
+	METHOD e getTexture ()Lnone/bmj;
+	METHOD f getItemCameraTransforms ()Lnone/bgs;
 CLASS none/bpb net/minecraft/client/audio/PositionedSound
 CLASS none/bpc net/minecraft/client/audio/MovingSound
 	FIELD j donePlaying Z
