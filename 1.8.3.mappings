@@ -19436,11 +19436,45 @@ CLASS none/bgb net/minecraft/client/renderers/ChunkSectionRenderers
 		ARG 0 chunkSectionRendererSource
 	METHOD a getRenderer (Lnone/ck;)Lnone/bhu;
 		ARG 0 pos
-CLASS none/bge
+CLASS none/bgc net/minecraft/client/renderer/ChestRenderer
+CLASS none/bgd net/minecraft/client/renderer/BlockModelShapes
+	FIELD b blockStateManager Lnone/bgw;
+	FIELD c modelManager Lnone/bov;
+	METHOD <init> (Lnone/bov;)V
+		ARG 0 modelManager
+	METHOD a getBlockStateMapper ()Lnone/bgw;
+	METHOD a (Lnone/ama;)Lnone/bmj;
+		ARG 0 blockState
+CLASS none/bge net/minecraft/client/renderer/BlockRendererDispatcher
+	FIELD a blockModelShapes Lnone/bgd;
 	FIELD b gameSettings Lnone/avi;
+	FIELD c blockModelRenderer Lnone/bgg;
+	FIELD d chestRenderer Lnone/bgc;
+	FIELD e fluidRenderer Lnone/bgf;
+	METHOD <init> (Lnone/bgd;Lnone/avi;)V
+		ARG 0 blockModelShapes
+		ARG 1 settings
+	METHOD a getBlockModelShapes ()Lnone/bgd;
+	METHOD a (Lnone/afi;I)Z
+		ARG 0 block
+	METHOD a getModelFromBlockState (Lnone/ama;Lnone/adr;Lnone/ck;)Lnone/bor;
+		ARG 0 blockState
+		ARG 1 blockAccess
+		ARG 2 blockPos
+	METHOD a (Lnone/ama;Lnone/ck;)Lnone/bor;
+		ARG 0 blockState
+		ARG 1 blockPos
 	METHOD a tryTesselateBlock (Lnone/ama;Lnone/ck;Lnone/adr;Lnone/bfe;)Z
+	METHOD a (Lnone/ama;Lnone/ck;Lnone/bmj;Lnone/adr;)V
+		ARG 0 blockState
+		ARG 1 blockPos
+		ARG 2 atlasSprite
+		ARG 3 blockAccess
 	METHOD a onReload (Lnone/bnj;)V
-CLASS none/bgg
+		ARG 0 resourceManager
+	METHOD b getBlockModelRenderer ()Lnone/bgg;
+CLASS none/bgf net/minecraft/client/renderer/BlockFluidRenderer
+CLASS none/bgg net/minecraft/client/renderer/BlockModelRenderer
 	CLASS none/bgg$a
 		FIELD a DOWN Lnone/bgg$a;
 		FIELD b UP Lnone/bgg$a;
@@ -20638,6 +20672,7 @@ CLASS none/bok net/minecraft/client/resources/data/PackMetadataSection
 CLASS none/bol net/minecraft/client/resources/data/PackMetadataSectionSerializer
 CLASS none/boo net/minecraft/client/resources/data/TextureMetadataSection
 CLASS none/bop net/minecraft/client/resources/data/TextureMetadataSectionSerializer
+CLASS none/bor net/minecraft/client/resources/model/IBakedModel
 CLASS none/bos net/minecraft/util/BlockModelRotation
 	FIELD a X0_Y0 Lnone/bos;
 	FIELD b X0_Y90 Lnone/bos;
@@ -20664,15 +20699,13 @@ CLASS none/bou
 	FIELD q CLOCK_GENERATION_MARKER Lnone/bgm;
 	FIELD r BLOCK_ENTITY_MARKER Lnone/bgm;
 CLASS none/bov
+	METHOD a getMissingModel ()Lnone/bor;
 	METHOD a onReload (Lnone/bnj;)V
 CLASS none/bow
 	METHOD equals (Ljava/lang/Object;)Z
 	METHOD hashCode ()I
 	METHOD toString getFullName ()Ljava/lang/String;
 CLASS none/box
-	CLASS none/box$a
-		FIELD d particle Lnone/bmj;
-		METHOD a setParticle (Lnone/bmj;)Lnone/box$a;
 CLASS none/bpb net/minecraft/client/audio/PositionedSound
 CLASS none/bpc net/minecraft/client/audio/MovingSound
 	FIELD j donePlaying Z
